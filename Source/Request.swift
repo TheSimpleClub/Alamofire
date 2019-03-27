@@ -244,7 +244,7 @@ extension Request: CustomStringConvertible {
     open var description: String {
         var components: [String] = []
 
-        if letAFHTTPMethod = request?.httpMethod {
+        if let HTTPMethod = request?.httpMethod {
             components.append(HTTPMethod)
         }
 
