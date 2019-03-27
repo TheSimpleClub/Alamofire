@@ -96,7 +96,7 @@ extension URLRequest {
     /// - parameter headers: The HTTP headers. `nil` by default.
     ///
     /// - returns: The new `URLRequest` instance.
-    public init(url: URLConvertible, method: HTTPMethod, headers: HTTPHeaders? = nil) throws {
+    public init(url: URLConvertible, method:AFHTTPMethod, headers: HTTPHeaders? = nil) throws {
         let url = try url.asURL()
 
         self.init(url: url)
@@ -131,7 +131,7 @@ extension URLRequest {
 @discardableResult
 public func request(
     _ url: URLConvertible,
-    method: HTTPMethod = .get,
+    method:AFHTTPMethod = .get,
     parameters: Parameters? = nil,
     encoding: ParameterEncoding = URLEncoding.default,
     headers: HTTPHeaders? = nil)
@@ -178,7 +178,7 @@ public func request(_ urlRequest: URLRequestConvertible) -> DataRequest {
 @discardableResult
 public func download(
     _ url: URLConvertible,
-    method: HTTPMethod = .get,
+    method:AFHTTPMethod = .get,
     parameters: Parameters? = nil,
     encoding: ParameterEncoding = URLEncoding.default,
     headers: HTTPHeaders? = nil,
@@ -261,7 +261,7 @@ public func download(
 public func upload(
     _ fileURL: URL,
     to url: URLConvertible,
-    method: HTTPMethod = .post,
+    method:AFHTTPMethod = .post,
     headers: HTTPHeaders? = nil)
     -> UploadRequest
 {
@@ -295,7 +295,7 @@ public func upload(_ fileURL: URL, with urlRequest: URLRequestConvertible) -> Up
 public func upload(
     _ data: Data,
     to url: URLConvertible,
-    method: HTTPMethod = .post,
+    method:AFHTTPMethod = .post,
     headers: HTTPHeaders? = nil)
     -> UploadRequest
 {
@@ -329,7 +329,7 @@ public func upload(_ data: Data, with urlRequest: URLRequestConvertible) -> Uplo
 public func upload(
     _ stream: InputStream,
     to url: URLConvertible,
-    method: HTTPMethod = .post,
+    method:AFHTTPMethod = .post,
     headers: HTTPHeaders? = nil)
     -> UploadRequest
 {
@@ -377,7 +377,7 @@ public func upload(
     multipartFormData: @escaping (MultipartFormData) -> Void,
     usingThreshold encodingMemoryThreshold: UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold,
     to url: URLConvertible,
-    method: HTTPMethod = .post,
+    method:AFHTTPMethod = .post,
     headers: HTTPHeaders? = nil,
     encodingCompletion: ((SessionManager.MultipartFormDataEncodingResult) -> Void)?)
 {

@@ -255,7 +255,7 @@ enum Router: URLRequestConvertible {
 
     static let baseURLString = "https://example.com"
 
-    var method: HTTPMethod {
+    var method:AFHTTPMethod {
         switch self {
         case .createUser:
             return .post

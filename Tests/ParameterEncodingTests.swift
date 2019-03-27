@@ -595,7 +595,7 @@ class URLParameterEncodingTestCase: ParameterEncodingTestCase {
         do {
             // Given
             var mutableURLRequest = self.urlRequest
-            mutableURLRequest.httpMethod = HTTPMethod.get.rawValue
+            mutableURLRequest.httpMethod =AFHTTPMethod.get.rawValue
             let parameters = ["foo": 1, "bar": 2]
 
             // When
@@ -614,7 +614,7 @@ class URLParameterEncodingTestCase: ParameterEncodingTestCase {
         do {
             // Given
             var mutableURLRequest = self.urlRequest
-            mutableURLRequest.httpMethod = HTTPMethod.post.rawValue
+            mutableURLRequest.httpMethod =AFHTTPMethod.post.rawValue
             let parameters = ["foo": 1, "bar": 2]
 
             // When
@@ -638,7 +638,7 @@ class URLParameterEncodingTestCase: ParameterEncodingTestCase {
         do {
             // Given
             var mutableURLRequest = self.urlRequest
-            mutableURLRequest.httpMethod = HTTPMethod.post.rawValue
+            mutableURLRequest.httpMethod =AFHTTPMethod.post.rawValue
             let parameters = ["foo": 1, "bar": 2]
 
             // When

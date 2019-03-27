@@ -140,7 +140,7 @@ class URLProtocolTestCase: BaseTestCase {
         let url = URL(string: urlString)!
 
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = HTTPMethod.get.rawValue
+        urlRequest.httpMethod =AFHTTPMethod.get.rawValue
         urlRequest.setValue("foobar", forHTTPHeaderField: "Request-Header")
 
         let expectation = self.expectation(description: "GET request should succeed")

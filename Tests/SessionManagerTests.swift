@@ -31,10 +31,10 @@ class SessionManagerTestCase: BaseTestCase {
     // MARK: Helper Types
 
     private class HTTPMethodAdapter: RequestAdapter {
-        let method: HTTPMethod
+        let method:AFHTTPMethod
         let throwsError: Bool
 
-        init(method: HTTPMethod, throwsError: Bool = false) {
+        init(method:AFHTTPMethod, throwsError: Bool = false) {
             self.method = method
             self.throwsError = throwsError
         }

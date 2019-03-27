@@ -169,7 +169,7 @@ class CacheTestCase: BaseTestCase {
         let url = URL(string: urlString)!
 
         var urlRequest = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: requestTimeout)
-        urlRequest.httpMethod = HTTPMethod.get.rawValue
+        urlRequest.httpMethod =AFHTTPMethod.get.rawValue
 
         do {
             return try URLEncoding.default.encode(urlRequest, with: parameters)

@@ -206,7 +206,7 @@ Response Caching is handled on the system framework level by [`URLCache`](https:
 The `HTTPMethod` enumeration lists the HTTP methods defined in [RFC 7231 §4.3](http://tools.ietf.org/html/rfc7231#section-4.3):
 
 ```swift
-public enum HTTPMethod: String {
+public enumAFHTTPMethod: String {
     case options = "OPTIONS"
     case get     = "GET"
     case head    = "HEAD"

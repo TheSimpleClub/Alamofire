@@ -27,7 +27,7 @@ import Foundation
 /// HTTP method definitions.
 ///
 /// See https://tools.ietf.org/html/rfc7231#section-4.3
-public enum HTTPMethod: String {
+public enum AFHTTPMethod: String {
     case options = "OPTIONS"
     case get     = "GET"
     case head    = "HEAD"
@@ -176,7 +176,7 @@ public struct URLEncoding: ParameterEncoding {
 
         guard let parameters = parameters else { return urlRequest }
 
-        if let method = HTTPMethod(rawValue: urlRequest.httpMethod ?? "GET"), encodesParametersInURL(with: method) {
+        if let method = AFHTTPMethod(rawValue: urlRequest.httpMethod ?? "GET"), encodesParametersInURL(with: method) {
             guard let url = urlRequest.url else {
                 throw AFError.parameterEncodingFailed(reason: .missingURL)
             }
@@ -295,7 +295,7 @@ public struct URLEncoding: ParameterEncoding {
         return components.map { "\($0)=\($1)" }.joined(separator: "&")
     }
 
-    private func encodesParametersInURL(with method: HTTPMethod) -> Bool {
+    private func encodesParametersInURL(with method:AFHTTPMethod) -> Bool {
         switch destination {
         case .queryString:
             return true

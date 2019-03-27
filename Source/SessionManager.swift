@@ -225,7 +225,7 @@ open class SessionManager {
     @discardableResult
     open func request(
         _ url: URLConvertible,
-        method: HTTPMethod = .get,
+        method:AFHTTPMethod = .get,
         parameters: Parameters? = nil,
         encoding: ParameterEncoding = URLEncoding.default,
         headers: HTTPHeaders? = nil)
@@ -315,7 +315,7 @@ open class SessionManager {
     @discardableResult
     open func download(
         _ url: URLConvertible,
-        method: HTTPMethod = .get,
+        method:AFHTTPMethod = .get,
         parameters: Parameters? = nil,
         encoding: ParameterEncoding = URLEncoding.default,
         headers: HTTPHeaders? = nil,
@@ -456,7 +456,7 @@ open class SessionManager {
     open func upload(
         _ fileURL: URL,
         to url: URLConvertible,
-        method: HTTPMethod = .post,
+        method:AFHTTPMethod = .post,
         headers: HTTPHeaders? = nil)
         -> UploadRequest
     {
@@ -502,7 +502,7 @@ open class SessionManager {
     open func upload(
         _ data: Data,
         to url: URLConvertible,
-        method: HTTPMethod = .post,
+        method:AFHTTPMethod = .post,
         headers: HTTPHeaders? = nil)
         -> UploadRequest
     {
@@ -548,7 +548,7 @@ open class SessionManager {
     open func upload(
         _ stream: InputStream,
         to url: URLConvertible,
-        method: HTTPMethod = .post,
+        method:AFHTTPMethod = .post,
         headers: HTTPHeaders? = nil)
         -> UploadRequest
     {
@@ -609,7 +609,7 @@ open class SessionManager {
         multipartFormData: @escaping (MultipartFormData) -> Void,
         usingThreshold encodingMemoryThreshold: UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold,
         to url: URLConvertible,
-        method: HTTPMethod = .post,
+        method:AFHTTPMethod = .post,
         headers: HTTPHeaders? = nil,
         encodingCompletion: ((MultipartFormDataEncodingResult) -> Void)?)
     {
